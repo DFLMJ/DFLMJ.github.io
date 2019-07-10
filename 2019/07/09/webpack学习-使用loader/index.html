@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>webpack-使用loader | Dont&#39;t Settle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="loader使用示例123456789101112131415161718192021222324252627module.exports=&amp;#123;    //首先配置一个 module 模块    module:&amp;#123;        //在这个模块里面填写需要支持 规则数组        rules:[            //每个规则是一个对象形式的键值对            &amp;">
+<meta name="keywords" content="马俊的每日博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack-使用loader">
+<meta property="og:url" content="https://DFLMJ.github.io/2019/07/09/webpack学习-使用loader/index.html">
+<meta property="og:site_name" content="Dont&#39;t Settle">
+<meta property="og:description" content="loader使用示例123456789101112131415161718192021222324252627module.exports=&amp;#123;    //首先配置一个 module 模块    module:&amp;#123;        //在这个模块里面填写需要支持 规则数组        rules:[            //每个规则是一个对象形式的键值对            &amp;">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2019-07-09T08:03:40.148Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack-使用loader">
+<meta name="twitter:description" content="loader使用示例123456789101112131415161718192021222324252627module.exports=&amp;#123;    //首先配置一个 module 模块    module:&amp;#123;        //在这个模块里面填写需要支持 规则数组        rules:[            //每个规则是一个对象形式的键值对            &amp;">
+  
+    <link rel="alternate" href="/atom.xml" title="Dont&#39;t Settle" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Dont&#39;t Settle</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://DFLMJ.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-webpack学习-使用loader" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/09/webpack学习-使用loader/" class="article-date">
+  <time datetime="2019-07-09T07:37:10.616Z" itemprop="datePublished">2019-07-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack-使用loader
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="loader使用示例"><a href="#loader使用示例" class="headerlink" title="loader使用示例"></a>loader使用示例</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">module.exports=&#123;</span><br><span class="line">    //首先配置一个 module 模块</span><br><span class="line">    module:&#123;</span><br><span class="line">        //在这个模块里面填写需要支持 规则数组</span><br><span class="line">        rules:[</span><br><span class="line">            //每个规则是一个对象形式的键值对</span><br><span class="line">            &#123;</span><br><span class="line">                //使用正则表达式来匹配需要处理的文件</span><br><span class="line">                test:/\.css$/,</span><br><span class="line">                //这是使用单个loader的时候</span><br><span class="line">                use:&quot;css-loader&quot;,</span><br><span class="line">                //这是使用多个loader的时候,此时use是一个数组，管式链,从右到左,越是 数组后面的越先处理</span><br><span class="line">                use:[</span><br><span class="line">                        &#123;loader:&quot;style-loader&quot;&#125;,</span><br><span class="line">                        &#123;</span><br><span class="line">                            //该loader的名称</span><br><span class="line">                            loader:&quot;css-loader&quot;,</span><br><span class="line">                            //该loader的一些可选项，不一定是option</span><br><span class="line">                            option:&#123;</span><br><span class="line">                                modules:true</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    ]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://DFLMJ.github.io/2019/07/09/webpack学习-使用loader/" data-id="cjxwzfpcz0007fcugr2q2i61o" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/07/10/webpack学习-CSS文件处理/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          webpack学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/06/28/webpack学习-CSS常用loader与插件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">五月 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/10/webpack学习-CSS文件处理/">webpack学习</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/09/webpack学习-使用loader/">webpack-使用loader</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/28/webpack学习-CSS常用loader与插件/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/24/伪类选择器/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/24/webpack学习心得/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 馬儁<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
