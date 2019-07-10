@@ -5,20 +5,20 @@
   
 
   
-  <title>Dont&#39;t Settle</title>
+  <title>vue学习日记-监听子组件的事件 | Dont&#39;t Settle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title:vue学习日记-监听子组件的事件v-bind和v-on的替代品v-bind可以使用 : 代替，v-on可以使用 @ 代替。 1 在父级组件中添加事件名监听子组件的事件时，需要在父组件添加相应的监听事件名。下面的 chang-size 便是我们添加的自定义事件名 123456789&amp;lt;div id=&amp;quot;app&amp;quot; &amp;gt;    &amp;lt;blog-item">
+  <meta name="description" content="v-bind和v-on的替代品v-bind可以使用 : 代替，v-on可以使用 @ 代替。 1 在父级组件中添加事件名监听子组件的事件时，需要在父组件添加相应的监听事件名。下面的 chang-size 便是我们添加的自定义事件名 123456789&amp;lt;div id=&amp;quot;app&amp;quot; &amp;gt;    &amp;lt;blog-item     :style=&amp;quot;&amp;#123;font">
 <meta name="keywords" content="马俊的每日博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dont&#39;t Settle">
+<meta property="og:title" content="vue学习日记-监听子组件的事件">
 <meta property="og:url" content="https://DFLMJ.github.io/2019/06/13/vue学习日记-监听子组件的事件/index.html">
 <meta property="og:site_name" content="Dont&#39;t Settle">
-<meta property="og:description" content="title:vue学习日记-监听子组件的事件v-bind和v-on的替代品v-bind可以使用 : 代替，v-on可以使用 @ 代替。 1 在父级组件中添加事件名监听子组件的事件时，需要在父组件添加相应的监听事件名。下面的 chang-size 便是我们添加的自定义事件名 123456789&amp;lt;div id=&amp;quot;app&amp;quot; &amp;gt;    &amp;lt;blog-item">
+<meta property="og:description" content="v-bind和v-on的替代品v-bind可以使用 : 代替，v-on可以使用 @ 代替。 1 在父级组件中添加事件名监听子组件的事件时，需要在父组件添加相应的监听事件名。下面的 chang-size 便是我们添加的自定义事件名 123456789&amp;lt;div id=&amp;quot;app&amp;quot; &amp;gt;    &amp;lt;blog-item     :style=&amp;quot;&amp;#123;font">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-06-13T11:36:44.137Z">
+<meta property="og:updated_time" content="2019-07-10T08:43:02.318Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dont&#39;t Settle">
-<meta name="twitter:description" content="title:vue学习日记-监听子组件的事件v-bind和v-on的替代品v-bind可以使用 : 代替，v-on可以使用 @ 代替。 1 在父级组件中添加事件名监听子组件的事件时，需要在父组件添加相应的监听事件名。下面的 chang-size 便是我们添加的自定义事件名 123456789&amp;lt;div id=&amp;quot;app&amp;quot; &amp;gt;    &amp;lt;blog-item">
+<meta name="twitter:title" content="vue学习日记-监听子组件的事件">
+<meta name="twitter:description" content="v-bind和v-on的替代品v-bind可以使用 : 代替，v-on可以使用 @ 代替。 1 在父级组件中添加事件名监听子组件的事件时，需要在父组件添加相应的监听事件名。下面的 chang-size 便是我们添加的自定义事件名 123456789&amp;lt;div id=&amp;quot;app&amp;quot; &amp;gt;    &amp;lt;blog-item     :style=&amp;quot;&amp;#123;font">
   
     <link rel="alternate" href="/atom.xml" title="Dont&#39;t Settle" type="application/atom+xml">
   
@@ -75,10 +75,19 @@
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      vue学习日记-监听子组件的事件
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<h2 id="title-vue学习日记-监听子组件的事件"><a href="#title-vue学习日记-监听子组件的事件" class="headerlink" title="title:vue学习日记-监听子组件的事件"></a>title:vue学习日记-监听子组件的事件</h2><h2 id="v-bind和v-on的替代品"><a href="#v-bind和v-on的替代品" class="headerlink" title="v-bind和v-on的替代品"></a>v-bind和v-on的替代品</h2><p>v-bind可以使用 <code>:</code> 代替，v-on可以使用 <code>@</code> 代替。</p>
+        <h2 id="v-bind和v-on的替代品"><a href="#v-bind和v-on的替代品" class="headerlink" title="v-bind和v-on的替代品"></a>v-bind和v-on的替代品</h2><p>v-bind可以使用 <code>:</code> 代替，v-on可以使用 <code>@</code> 代替。</p>
 <h2 id="1-在父级组件中添加事件名"><a href="#1-在父级组件中添加事件名" class="headerlink" title="1 在父级组件中添加事件名"></a>1 在父级组件中添加事件名</h2><p>监听子组件的事件时，需要在父组件添加相应的监听事件名。下面的 <code>chang-size</code> 便是我们添加的自定义事件名</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot; &gt;</span><br><span class="line">    &lt;blog-item </span><br><span class="line">    :style=&quot;&#123;fontSize:postFontSize+&apos;em&apos;&#125;&quot; </span><br><span class="line">    v-for=&apos;content in article&apos; </span><br><span class="line">    :cont=&apos;content&apos;</span><br><span class="line">    @chang-size=&quot;postFontSize+=0.1&quot;</span><br><span class="line">    &gt;</span><br><span class="line">    &lt;/blog-item&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="2-在子级"><a href="#2-在子级" class="headerlink" title="2 在子级"></a>2 在子级</h2><h2 id="需要注意的坑"><a href="#需要注意的坑" class="headerlink" title="需要注意的坑"></a>需要注意的坑</h2>
@@ -98,7 +107,7 @@
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          (no title)
+          webpack 4.0 学习心得
         
       </div>
     </a>
@@ -106,7 +115,7 @@
   
     <a href="/2019/06/11/uri-url-urn之间的区别/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">uri、url、urn之间的区别</div>
     </a>
   
 </nav>
@@ -151,15 +160,15 @@
           </li>
         
           <li>
-            <a href="/2019/06/24/伪类选择器/">(no title)</a>
+            <a href="/2019/06/24/伪类选择器/">CSS伪类选择器</a>
           </li>
         
           <li>
-            <a href="/2019/06/24/学习webpack-开始/">(no title)</a>
+            <a href="/2019/06/24/学习webpack-开始/">webpack 4.0 学习心得</a>
           </li>
         
           <li>
-            <a href="/2019/06/13/vue学习日记-监听子组件的事件/">(no title)</a>
+            <a href="/2019/06/13/vue学习日记-监听子组件的事件/">vue学习日记-监听子组件的事件</a>
           </li>
         
       </ul>
