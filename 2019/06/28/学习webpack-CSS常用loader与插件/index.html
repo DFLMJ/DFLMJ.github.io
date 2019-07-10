@@ -5,20 +5,20 @@
   
 
   
-  <title>webpack学习 | Dont&#39;t Settle</title>
+  <title>Dont&#39;t Settle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="技术日志、JavaScript、游戏开发、web前端、全栈开发">
+  <meta name="description" content="title:webpack对css的常规操作安装需要用到的插件npm instarll --save-dev css-loader style-loader mini-css-extract-plugin optimize-css-assets-webpack-plugin  插件解释css-loader 是将导入的css编译、解决import、require的模块化导入style-loader">
 <meta name="keywords" content="马俊的每日博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="webpack学习">
-<meta property="og:url" content="https://DFLMJ.github.io/2019/07/10/webpack学习-CSS文件处理/index.html">
+<meta property="og:title" content="Dont&#39;t Settle">
+<meta property="og:url" content="https://DFLMJ.github.io/2019/06/28/学习webpack-CSS常用loader与插件/index.html">
 <meta property="og:site_name" content="Dont&#39;t Settle">
-<meta property="og:description" content="技术日志、JavaScript、游戏开发、web前端、全栈开发">
+<meta property="og:description" content="title:webpack对css的常规操作安装需要用到的插件npm instarll --save-dev css-loader style-loader mini-css-extract-plugin optimize-css-assets-webpack-plugin  插件解释css-loader 是将导入的css编译、解决import、require的模块化导入style-loader">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-07-10T08:12:24.225Z">
+<meta property="og:updated_time" content="2019-07-10T08:35:06.833Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="webpack学习">
-<meta name="twitter:description" content="技术日志、JavaScript、游戏开发、web前端、全栈开发">
+<meta name="twitter:title" content="Dont&#39;t Settle">
+<meta name="twitter:description" content="title:webpack对css的常规操作安装需要用到的插件npm instarll --save-dev css-loader style-loader mini-css-extract-plugin optimize-css-assets-webpack-plugin  插件解释css-loader 是将导入的css编译、解决import、require的模块化导入style-loader">
   
     <link rel="alternate" href="/atom.xml" title="Dont&#39;t Settle" type="application/atom+xml">
   
@@ -65,33 +65,28 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-webpack学习-CSS文件处理" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-学习webpack-CSS常用loader与插件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/07/10/webpack学习-CSS文件处理/" class="article-date">
-  <time datetime="2019-07-10T08:11:24.512Z" itemprop="datePublished">2019-07-10</time>
+    <a href="/2019/06/28/学习webpack-CSS常用loader与插件/" class="article-date">
+  <time datetime="2019-06-28T08:05:29.724Z" itemprop="datePublished">2019-06-28</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      webpack学习
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <hr>
+<h2 id="title-webpack对css的常规操作"><a href="#title-webpack对css的常规操作" class="headerlink" title="title:webpack对css的常规操作"></a>title:webpack对css的常规操作</h2><h2 id="安装需要用到的插件"><a href="#安装需要用到的插件" class="headerlink" title="安装需要用到的插件"></a>安装需要用到的插件</h2><pre><code>npm instarll --save-dev css-loader style-loader mini-css-extract-plugin optimize-css-assets-webpack-plugin 
+</code></pre><h3 id="插件解释"><a href="#插件解释" class="headerlink" title="插件解释"></a>插件解释</h3><p>css-loader 是将导入的css编译、解决import、require的模块化导入<br>style-loader 是将最终获得的css代码加载到style标签并插入到HTML的head标签中<br>mini-css-extract-plugin 是将导入的每个css文件最后又导出为独立的css文件<br>optimize-css-assets-webpack-plugin 是用来压缩优化css文件的</p>
+<h3 id="自动添加游览器前缀"><a href="#自动添加游览器前缀" class="headerlink" title="自动添加游览器前缀"></a>自动添加游览器前缀</h3><pre><code>npm install --save-dev postcss-loader  autoprefixer
+</code></pre><h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><pre><code>uglifyjs-webpack-plugin
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://DFLMJ.github.io/2019/07/10/webpack学习-CSS文件处理/" data-id="cjxwzfpat0001fcug1a6flmyt" class="article-share-link">Share</a>
+      <a data-url="https://DFLMJ.github.io/2019/06/28/学习webpack-CSS常用loader与插件/" data-id="cjxwzn7zv0000jsugn87nm5gx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -100,10 +95,19 @@
     
 <nav id="article-nav">
   
+    <a href="/2019/07/09/学习webpack-使用loader/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          webpack-使用loader
+        
+      </div>
+    </a>
   
-    <a href="/2019/07/09/webpack学习-使用loader/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2019/06/24/伪类选择器/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">webpack-使用loader</div>
+      <div class="article-nav-title"></div>
     </a>
   
 </nav>
@@ -140,15 +144,11 @@
       <ul>
         
           <li>
-            <a href="/2019/07/10/webpack学习-CSS文件处理/">webpack学习</a>
+            <a href="/2019/07/09/学习webpack-使用loader/">webpack-使用loader</a>
           </li>
         
           <li>
-            <a href="/2019/07/09/webpack学习-使用loader/">webpack-使用loader</a>
-          </li>
-        
-          <li>
-            <a href="/2019/06/28/webpack学习-CSS常用loader与插件/">(no title)</a>
+            <a href="/2019/06/28/学习webpack-CSS常用loader与插件/">(no title)</a>
           </li>
         
           <li>
@@ -156,7 +156,11 @@
           </li>
         
           <li>
-            <a href="/2019/06/24/webpack学习心得/">(no title)</a>
+            <a href="/2019/06/24/学习webpack-开始/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/13/vue学习日记-监听子组件的事件/">(no title)</a>
           </li>
         
       </ul>
