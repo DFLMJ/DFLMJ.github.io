@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Dont&#39;t Settle">
 <meta property="og:description" content="今日在配置webpack自动处理css前缀的插件atuoprefixe时，发现自己的css样式并没有添加游览器前缀。折腾了许久才研究出来。 安装依赖1npm install --save-dev style-loader css-loader postcss-loader autoprefixer 新建文件在项目跟目录下面新建postcss的配置文件 postcss.config.js，编写如下内">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-07-11T11:04:15.412Z">
+<meta property="og:updated_time" content="2019-07-11T11:14:18.923Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于配置autoprefixer无效的解决方案">
 <meta name="twitter:description" content="今日在配置webpack自动处理css前缀的插件atuoprefixe时，发现自己的css样式并没有添加游览器前缀。折腾了许久才研究出来。 安装依赖1npm install --save-dev style-loader css-loader postcss-loader autoprefixer 新建文件在项目跟目录下面新建postcss的配置文件 postcss.config.js，编写如下内">
@@ -93,7 +93,7 @@
 <p>注意：配置<code>autoprefixer</code>时使用到了<code><a href="https://github.com/browserslist/browserslist#configuring-for-different-environments" target="_blank" rel="noopener">browsers</a></code>选项，我是因为没有配置这个选项所导致的没有css浏览器前缀。</p>
 <h3 id="关于-browsers"><a href="#关于-browsers" class="headerlink" title="关于 browsers"></a>关于 <code><a href="https://github.com/browserslist/browserslist#configuring-for-different-environments" target="_blank" rel="noopener">browsers</a></code></h3><p>对于<code><a href="https://github.com/browserslist/browserslist#configuring-for-different-environments" target="_blank" rel="noopener">browsers</a></code>我理解是在这个配置中它是筛选适配目标浏览器css的条件。</p>
 <blockquote>
-<p>[info]官方介绍：用于在不同前端工具之间共享目标浏览器和Node.js版本的配置。</p>
+<p>官方介绍：用于在不同前端工具之间共享目标浏览器和Node.js版本的配置。</p>
 </blockquote>
 <p>官方建议单独新建一个配置文件 <code>.browserslistrc</code>或是将配置添加到<code>package.json</code>中。</p>
 <p>具体的配置可到Github上面的项目地址查看。</p>
